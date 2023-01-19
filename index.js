@@ -4,7 +4,7 @@ const db = {
   garage: [
     {
       name: "Tesla Model 3",
-      color: "##ff0000",
+      color: "#ff0000",
       id: 1,
     },
     {
