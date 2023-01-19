@@ -4,7 +4,7 @@ Api for Rolling Scopes School task "Async Race".
 ## Setup and Running
 
 - Use `node 14.x` or higher.
-- Clone this repo: `$ git clone https://github.com/mikhama/async-race-api.git`.
+- Clone this repo: `$ git clone https://github.com/GuschinS/async-race-api.git`.
 - Go to downloaded folder: `$ cd async-race-api`.
 - Install dependencies: `$ npm install`.
 - Start server: `$ npm start`.
@@ -52,9 +52,9 @@ Returns json data about cars in a garage.
 * **Query Params**
 
     **Optional:**
- 
+
     `_page=[integer]`
-  
+
     `_limit=[integer]`
 
     If `_limit` param is passed api returns a header `X-Total-Count` that countains total number of records.
@@ -66,7 +66,7 @@ Returns json data about cars in a garage.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       [
         {
@@ -80,7 +80,7 @@ Returns json data about cars in a garage.
     ```
       "X-Total-Count": "4"
     ```
- 
+
 * **Error Response:**
 
     None
@@ -112,7 +112,7 @@ Returns json data about specified car.
 *  **URL Params**
 
     **Required:**
- 
+
     `id=[integer]`
 
 * **Query Params**
@@ -126,7 +126,7 @@ Returns json data about specified car.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
         "name": "Tesla",
@@ -134,11 +134,11 @@ Returns json data about specified car.
         "id": 1
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
@@ -187,7 +187,7 @@ Creates a new car in a garage.
 * **Success Response:**
 
   * **Code:** 201 CREATED <br />
-    **Content:** 
+    **Content:**
     ```json
       {
           "name": "New Red Car",
@@ -195,7 +195,7 @@ Creates a new car in a garage.
           "id": 10
       }
     ```
- 
+
 * **Error Response:**
 
     None
@@ -228,7 +228,7 @@ Delete specified car from a garage
 *  **URL Params**
 
     **Required:**
- 
+
     `id=[integer]`
 
 * **Query Params**
@@ -242,15 +242,15 @@ Delete specified car from a garage
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
@@ -301,7 +301,7 @@ Updates attributes of specified car.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
           "name": "Car with new name",
@@ -309,11 +309,11 @@ Updates attributes of specified car.
           "id": 2
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
@@ -349,9 +349,9 @@ Starts or stops engine of specified car, and returns it's actual velocity and di
 * **Query Params**
 
     **Required:**
- 
+
     `id=[integer]`
-  
+
     `status=['started'|'stopped']`
 
 * **Data Params**
@@ -361,25 +361,25 @@ Starts or stops engine of specified car, and returns it's actual velocity and di
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
         "velocity": 64,
         "distance": 500000
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-      **Content:** 
+      **Content:**
 
       Wrong parameters: "id" should be any positive number, "status" should be "started", "stopped" or "drive"
 
   OR
 
   * **Code:** 404 NOT FOUND <br />
-      **Content:** 
+      **Content:**
 
       Car with such id was not found in the garage.
 
@@ -414,9 +414,9 @@ Switches engine of specified car to drive mode and finishes with success message
 * **Query Params**
 
     **Required:**
- 
+
     `id=[integer]`
-  
+
     `status=['drive']`
 
 * **Data Params**
@@ -426,38 +426,38 @@ Switches engine of specified car to drive mode and finishes with success message
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
         "success": true
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-      **Content:** 
+      **Content:**
 
       Wrong parameters: "id" should be any positive number, "status" should be "started", "stopped" or "drive"
 
   OR
-  
+
   * **Code:** 404 NOT FOUND <br />
-      **Content:** 
+      **Content:**
 
       Engine parameters for car with such id was not found in the garage. Have you tried to set engine status to "started" before?
 
   OR
 
   * **Code:** 429 TOO MANY REQUESTS <br />
-      **Content:** 
+      **Content:**
 
       Drive already in progress. You can't run drive for the same car twice while it's not stopped.
 
   OR
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
-      **Content:** 
+      **Content:**
 
       Car has been stopped suddenly. It's engine was broken down.
 
@@ -494,9 +494,9 @@ Returns json data about winners.
 * **Query Params**
 
     **Optional:**
- 
+
     `_page=[integer]`
-  
+
     `_limit=[integer]`
 
     `_sort=['id'|'wins'|'time']`
@@ -512,7 +512,7 @@ Returns json data about winners.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       [
         {
@@ -526,7 +526,7 @@ Returns json data about winners.
     ```
       "X-Total-Count": "4"
     ```
- 
+
 * **Error Response:**
 
     None
@@ -558,7 +558,7 @@ Returns json data about specified winner.
 *  **URL Params**
 
     **Required:**
- 
+
     `id=[integer]`
 
 * **Query Params**
@@ -572,7 +572,7 @@ Returns json data about specified winner.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
           "id": 1,
@@ -580,11 +580,11 @@ Returns json data about specified winner.
           "time": 10
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
@@ -634,7 +634,7 @@ Creates a new records in a winners table.
 * **Success Response:**
 
   * **Code:** 201 CREATED <br />
-    **Content:** 
+    **Content:**
     ```json
       {
         "id": 109,
@@ -642,11 +642,11 @@ Creates a new records in a winners table.
         "time": 10
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
-      **Content:** 
+      **Content:**
 
       Error: Insert failed, duplicate id
 
@@ -677,7 +677,7 @@ Delete specified car from a garage
 *  **URL Params**
 
     **Required:**
- 
+
     `id=[integer]`
 
 * **Query Params**
@@ -691,15 +691,15 @@ Delete specified car from a garage
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
@@ -750,7 +750,7 @@ Updates attributes of specified winner.
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
     ```json
       {
         "wins": 2,
@@ -758,11 +758,11 @@ Updates attributes of specified winner.
         "id": 16
       }
     ```
- 
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** 
+    **Content:**
     ```json
       {}
     ```
